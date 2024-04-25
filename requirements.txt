@@ -1,5 +1,4 @@
 # Core Packages
-alembic==1.13.1
 asgiref==3.7.2
 attrs==23.1.0
 beautifulsoup4==4.12.2
@@ -14,16 +13,18 @@ pandas==1.5.3
 python-dateutil==2.8.2
 pytz==2023.3
 scipy==1.11.1
-SQLAlchemy==2.0.27
 Werkzeug==2.3.7
 
 # Data Science and ML Packages
 lightgbm==4.3.0
 scikit-learn==1.2.2
 seaborn==0.12.2
-tensorflow==2.13.0
 torch==2.2.2
 xgboost==2.0.3
+alembic>=1.13.1,<=1.13.x
+sqlalchemy>=2.0.27,<=2.0.x
+tensorflow>=2.13.0,<=2.13.x
+
 
 # Web Frameworks and Utilities
 Django==5.0
