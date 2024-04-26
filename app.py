@@ -11,6 +11,11 @@ import joblib
 # Load the model using joblib
 model = joblib.load('random_forest_model.pkl')
 
+@app.route('/')
+def home():
+    return "Home Page"
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     # Get the input data from the request
