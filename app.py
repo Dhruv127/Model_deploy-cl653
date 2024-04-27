@@ -11,9 +11,12 @@ import joblib
 # Load the model using joblib
 model = joblib.load('random_forest_model.pkl')
 
+from flask import send_from_directory
+
 @app.route('/')
 def home():
-    return "Home Page"
+    return send_from_directory('static', 'run.html')
+
 
 
 @app.route('/predict', methods=['POST'])
