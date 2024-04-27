@@ -2,81 +2,225 @@
 <html>
 <head>
     <title>Model Prediction</title>
+    <style>
+        /* Add CSS styling for better layout */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            grid-column: span 2;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Model Prediction</h1>
     <form id="predictionForm">
-        <!-- Create inputs for xmeas_1 to xmeas_41 -->
-        <h2>xmeas Inputs</h2>
-        <div id="xmeasInputs">
-            <!-- Create inputs for xmeas_1 to xmeas_41 -->
-            <label for="simulationRun">simulationRun:</label><input type="text" id="simulationRun" name="simulationRun"><br>
-            <label for="sample">sample:</label><input type="text" id="sample" name="sample"><br>
-            <label for="xmeas_1">xmeas_1:</label><input type="text" id="xmeas_1" name="xmeas_1"><br>
-            <label for="xmeas_2">xmeas_2:</label><input type="text" id="xmeas_2" name="xmeas_2"><br>
-            <label for="xmeas_3">xmeas_3:</label><input type="text" id="xmeas_3" name="xmeas_3"><br>
-            <label for="xmeas_4">xmeas_4:</label><input type="text" id="xmeas_4" name="xmeas_4"><br>
-            <label for="xmeas_5">xmeas_5:</label><input type="text" id="xmeas_5" name="xmeas_5"><br>
-            <label for="xmeas_6">xmeas_6:</label><input type="text" id="xmeas_6" name="xmeas_6"><br>
-            <label for="xmeas_7">xmeas_7:</label><input type="text" id="xmeas_7" name="xmeas_7"><br>
-            <label for="xmeas_8">xmeas_8:</label><input type="text" id="xmeas_8" name="xmeas_8"><br>
-            <label for="xmeas_9">xmeas_9:</label><input type="text" id="xmeas_9" name="xmeas_9"><br>
-            <label for="xmeas_10">xmeas_10:</label><input type="text" id="xmeas_10" name="xmeas_10"><br>
-            <label for="xmeas_11">xmeas_11:</label><input type="text" id="xmeas_11" name="xmeas_11"><br>
-            <label for="xmeas_12">xmeas_12:</label><input type="text" id="xmeas_12" name="xmeas_12"><br>
-            <label for="xmeas_13">xmeas_13:</label><input type="text" id="xmeas_13" name="xmeas_13"><br>
-            <label for="xmeas_14">xmeas_14:</label><input type="text" id="xmeas_14" name="xmeas_14"><br>
-            <label for="xmeas_15">xmeas_15:</label><input type="text" id="xmeas_15" name="xmeas_15"><br>
-            <label for="xmeas_16">xmeas_16:</label><input type="text" id="xmeas_16" name="xmeas_16"><br>
-            <label for="xmeas_17">xmeas_17:</label><input type="text" id="xmeas_17" name="xmeas_17"><br>
-            <label for="xmeas_18">xmeas_18:</label><input type="text" id="xmeas_18" name="xmeas_18"><br>
-            <label for="xmeas_19">xmeas_19:</label><input type="text" id="xmeas_19" name="xmeas_19"><br>
-            <label for="xmeas_20">xmeas_20:</label><input type="text" id="xmeas_20" name="xmeas_20"><br>
-            <label for="xmeas_21">xmeas_21:</label><input type="text" id="xmeas_21" name="xmeas_21"><br>
-            <label for="xmeas_22">xmeas_22:</label><input type="text" id="xmeas_22" name="xmeas_22"><br>
-            <label for="xmeas_23">xmeas_23:</label><input type="text" id="xmeas_23" name="xmeas_23"><br>
-            <label for="xmeas_24">xmeas_24:</label><input type="text" id="xmeas_24" name="xmeas_24"><br>
-            <label for="xmeas_25">xmeas_25:</label><input type="text" id="xmeas_25" name="xmeas_25"><br>
-            <label for="xmeas_26">xmeas_26:</label><input type="text" id="xmeas_26" name="xmeas_26"><br>
-            <label for="xmeas_27">xmeas_27:</label><input type="text" id="xmeas_27" name="xmeas_27"><br>
-            <label for="xmeas_28">xmeas_28:</label><input type="text" id="xmeas_28" name="xmeas_28"><br>
-            <label for="xmeas_29">xmeas_29:</label><input type="text" id="xmeas_29" name="xmeas_29"><br>
-            <label for="xmeas_30">xmeas_30:</label><input type="text" id="xmeas_30" name="xmeas_30"><br>
-            <label for="xmeas_31">xmeas_31:</label><input type="text" id="xmeas_31" name="xmeas_31"><br>
-            <label for="xmeas_32">xmeas_32:</label><input type="text" id="xmeas_32" name="xmeas_32"><br>
-            <label for="xmeas_33">xmeas_33:</label><input type="text" id="xmeas_33" name="xmeas_33"><br>
-            <label for="xmeas_34">xmeas_34:</label><input type="text" id="xmeas_34" name="xmeas_34"><br>
-            <label for="xmeas_35">xmeas_35:</label><input type="text" id="xmeas_35" name="xmeas_35"><br>
-            <label for="xmeas_36">xmeas_36:</label><input type="text" id="xmeas_36" name="xmeas_36"><br>
-            <label for="xmeas_37">xmeas_37:</label><input type="text" id="xmeas_37" name="xmeas_37"><br>
-            <label for="xmeas_38">xmeas_38:</label><input type="text" id="xmeas_38" name="xmeas_38"><br>
-            <label for="xmeas_39">xmeas_39:</label><input type="text" id="xmeas_39" name="xmeas_39"><br>
-            <label for="xmeas_40">xmeas_40:</label><input type="text" id="xmeas_40" name="xmeas_40"><br>
-            <label for="xmeas_41">xmeas_41:</label><input type="text" id="xmeas_41" name="xmeas_41"><br>
-        </div>
-        
-        <!-- Create inputs for xmv_1 to xmv_11 -->
-        <h2>xmv Inputs</h2>
-        <div id="xmvInputs">
-            <!-- Create inputs for xmv_1 to xmv_11 -->
-            <label for="xmv_1">xmv_1:</label><input type="text" id="xmv_1" name="xmv_1"><br>
-            <label for="xmv_2">xmv_2:</label><input type="text" id="xmv_2" name="xmv_2"><br>
-            <label for="xmv_3">xmv_3:</label><input type="text" id="xmv_3" name="xmv_3"><br>
-            <label for="xmv_4">xmv_4:</label><input type="text" id="xmv_4" name="xmv_4"><br>
-            <label for="xmv_5">xmv_5:</label><input type="text" id="xmv_5" name="xmv_5"><br>
-            <label for="xmv_6">xmv_6:</label><input type="text" id="xmv_6" name="xmv_6"><br>
-            <label for="xmv_7">xmv_7:</label><input type="text" id="xmv_7" name="xmv_7"><br>
-            <label for="xmv_8">xmv_8:</label><input type="text" id="xmv_8" name="xmv_8"><br>
-            <label for="xmv_9">xmv_9:</label><input type="text" id="xmv_9" name="xmv_9"><br>
-            <label for="xmv_10">xmv_10:</label><input type="text" id="xmv_10" name="xmv_10"><br>
-            <label for="xmv_11">xmv_11:</label><input type="text" id="xmv_11" name="xmv_11"><br>
-        </div>
-        
-        <input type="submit" value="Get Prediction">
+        <!-- Create groups for different sections -->
+        <h2 style="grid-column: span 2;">Feed Streams</h2>
+        <label for="xmeas_1">xmeas_1 (A_feed_stream):</label>
+        <input type="text" id="xmeas_1" name="xmeas_1" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_2">xmeas_2 (D_feed_stream):</label>
+        <input type="text" id="xmeas_2" name="xmeas_2" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_3">xmeas_3 (E_feed_stream):</label>
+        <input type="text" id="xmeas_3" name="xmeas_3" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_4">xmeas_4 (Total_fresh_feed_stripper):</label>
+        <input type="text" id="xmeas_4" name="xmeas_4" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_5">xmeas_5 (Recycle_flow_into_rxtr):</label>
+        <input type="text" id="xmeas_5" name="xmeas_5" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_6">xmeas_6 (Reactor_feed_rate):</label>
+        <input type="text" id="xmeas_6" name="xmeas_6" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_7">xmeas_7 (Reactor_pressure):</label>
+        <input type="text" id="xmeas_7" name="xmeas_7" placeholder="Default: 100" value="100">
+
+        <label for="xmeas_8">xmeas_8 (Reactor_level):</label>
+        <input type="text" id="xmeas_8" name="xmeas_8" placeholder="Default: 50%" value="0.5">
+
+        <label for="xmeas_9">xmeas_9 (Reactor_temp):</label>
+        <input type="text" id="xmeas_9" name="xmeas_9" placeholder="Default: 120°C" value="120">
+
+        <label for="xmeas_10">xmeas_10 (Purge_rate):</label>
+        <input type="text" id="xmeas_10" name="xmeas_10" placeholder="Default: 0.1" value="0.1">
+
+        <label for="xmeas_11">xmeas_11 (Separator_temp):</label>
+        <input type="text" id="xmeas_11" name="xmeas_11" placeholder="Default: 50°C" value="50">
+
+        <label for="xmeas_12">xmeas_12 (Separator_level):</label>
+        <input type="text" id="xmeas_12" name="xmeas_12" placeholder="Default: 50%" value="0.5">
+
+        <label for="xmeas_13">xmeas_13 (Separator_pressure):</label>
+        <input type="text" id="xmeas_13" name="xmeas_13" placeholder="Default: 100" value="100">
+
+        <label for="xmeas_14">xmeas_14 (Separator_underflow):</label>
+        <input type="text" id="xmeas_14" name="xmeas_14" placeholder="Default: 0.1" value="0.1">
+
+        <label for="xmeas_15">xmeas_15 (Stripper_level):</label>
+        <input type="text" id="xmeas_15" name="xmeas_15" placeholder="Default: 50%" value="0.5">
+
+        <label for="xmeas_16">xmeas_16 (Stripper_pressure):</label>
+        <input type="text" id="xmeas_16" name="xmeas_16" placeholder="Default: 100" value="100">
+
+        <label for="xmeas_17">xmeas_17 (Stripper_underflow):</label>
+        <input type="text" id="xmeas_17" name="xmeas_17" placeholder="Default: 0.1" value="0.1">
+
+        <label for="xmeas_18">xmeas_18 (Stripper_temperature):</label>
+        <input type="text" id="xmeas_18" name="xmeas_18" placeholder="Default: 120°C" value="120">
+
+        <label for="xmeas_19">xmeas_19 (Stripper_steam_flow):</label>
+        <input type="text" id="xmeas_19" name="xmeas_19" placeholder="Default: 1.0" value="1.0">
+
+        <label for="xmeas_20">xmeas_20 (Compressor_work):</label>
+        <input type="text" id="xmeas_20" name="xmeas_20" placeholder="Default: 1.0" value="1.0">
+
+        <label for="xmeas_21">xmeas_21 (Reactor_cooling_water_outlet_temp):</label>
+        <input type="text" id="xmeas_21" name="xmeas_21" placeholder="Default: 50°C" value="50">
+
+        <label for="xmeas_22">xmeas_22 (Condenser_cooling_water_outlet_temp):</label>
+        <input type="text" id="xmeas_22" name="xmeas_22" placeholder="Default: 50°C" value="50">
+
+        <label for="xmeas_23">xmeas_23 (Composition_of_A_rxtr_feed):</label>
+        <input type="text" id="xmeas_23" name="xmeas_23" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_24">xmeas_24 (Composition_of_B_rxtr_feed):</label>
+        <input type="text" id="xmeas_24" name="xmeas_24" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_25">xmeas_25 (Composition_of_C_rxtr_feed):</label>
+        <input type="text" id="xmeas_25" name="xmeas_25" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_26">xmeas_26 (Composition_of_D_rxtr_feed):</label>
+        <input type="text" id="xmeas_26" name="xmeas_26" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_27">xmeas_27 (Composition_of_E_rxtr_feed):</label>
+        <input type="text" id="xmeas_27" name="xmeas_27" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_28">Composition of F reactor feed:</label>
+        <input type="text" id="xmeas_28" name="xmeas_28" placeholder="Default: 0.5" value="0.5">
+
+        <h2 style="grid-column: span 2;">Purge Streams</h2>
+        <label for="xmeas_29">Composition of A purge:</label>
+        <input type="text" id="xmeas_29" name="xmeas_29" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_30">Composition of B purge:</label>
+        <input type="text" id="xmeas_30" name="xmeas_30" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_31">Composition of C purge:</label>
+        <input type="text" id="xmeas_31" name="xmeas_31" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_32">Composition of D purge:</label>
+        <input type="text" id="xmeas_32" name="xmeas_32" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_33">Composition of E purge:</label>
+        <input type="text" id="xmeas_33" name="xmeas_33" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_34">Composition of F purge:</label>
+        <input type="text" id="xmeas_34" name="xmeas_34" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_35">Composition of G purge:</label>
+        <input type="text" id="xmeas_35" name="xmeas_35" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_36">Composition of H purge:</label>
+        <input type="text" id="xmeas_36" name="xmeas_36" placeholder="Default: 0.5" value="0.5">
+
+        <h2 style="grid-column: span 2;">Product Streams</h2>
+        <label for="xmeas_37">Composition of D product:</label>
+        <input type="text" id="xmeas_37" name="xmeas_37" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_38">Composition of E product:</label>
+        <input type="text" id="xmeas_38" name="xmeas_38" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_39">Composition of F product:</label>
+        <input type="text" id="xmeas_39" name="xmeas_39" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_40">Composition of G product:</label>
+        <input type="text" id="xmeas_40" name="xmeas_40" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmeas_41">Composition of H product:</label>
+        <input type="text" id="xmeas_41" name="xmeas_41" placeholder="Default: 0.5" value="0.5">
+
+        <h2 style="grid-column: span 2;">Control Variables</h2>
+        <label for="xmv_1">D feed flow valve:</label>
+        <input type="text" id="xmv_1" name="xmv_1" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmv_2">E feed flow valve:</label>
+        <input type="text" id="xmv_2" name="xmv_2" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmv_3">A feed flow valve:</label>
+        <input type="text" id="xmv_3" name="xmv_3" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmv_4">Total feed flow stripper valve:</label>
+        <input type="text" id="xmv_4" name="xmv_4" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmv_5">Compressor recycle valve:</label>
+        <input type="text" id="xmv_5" name="xmv_5" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmv_6">Purge valve:</label>
+        <input type="text" id="xmv_6" name="xmv_6" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmv_7">Separator pot liquid flow valve:</label>
+        <input type="text" id="xmv_7" name="xmv_7" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmv_8">Stripper liquid product flow valve:</label>
+        <input type="text" id="xmv_8" name="xmv_8" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmv_9">Stripper steam valve:</label>
+        <input type="text" id="xmv_9" name="xmv_9" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmv_10">Reactor cooling water flow valve:</label>
+        <input type="text" id="xmv_10" name="xmv_10" placeholder="Default: 0.5" value="0.5">
+
+        <label for="xmv_11">Condenser cooling water flow valve:</label>
+        <input type="text" id="xmv_11" name="xmv_11" placeholder="Default: 0.5" value="0.5">
+
+        <input type="submit" value="Predict">
     </form>
-    
     <div id="result"></div>
-    
+
     <script>
         document.getElementById('predictionForm').addEventListener('submit', async function(event) {
             event.preventDefault();
