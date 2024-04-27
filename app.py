@@ -1,5 +1,6 @@
 from flask_cors import CORS
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
+
 
 app = Flask(__name__)
 
@@ -11,11 +12,11 @@ import joblib
 # Load the model using joblib
 model = joblib.load('random_forest_model.pkl')
 
-from flask import send_from_directory
+
 
 @app.route('/')
 def home():
-    return send_from_directory('static', 'run.html')
+    return send_file('run.html')
 
 
 
